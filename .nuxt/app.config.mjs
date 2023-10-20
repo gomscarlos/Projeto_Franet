@@ -1,6 +1,6 @@
 
 import { updateAppConfig } from '#app'
-import { defuFn } from 'D:/Meus Documentos/Área de Trabalho/Estágio/Projeto Estágio/Projeto/Projeto_Franet/node_modules/defu/dist/defu.mjs'
+import { defuFn } from 'D:/Meus Documentos/Área de Trabalho/Estágio/Projeto Estágio/Projeto/projeto_franet/node_modules/defu/dist/defu.mjs'
 
 const inlineConfig = {
   "nuxt": {}
