@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col w-full h-full">
     <header class="bg-[#004c25] w-full h-auto">
       <nav
         class="container mx-auto px-6 py-4 grid grid-cols-3 lg:flex lg:justify-between lg:px-12 lg:py-8"
@@ -59,7 +59,9 @@
         <!-- </Icone central Franet> -->
 
         <!-- <Links de Navegação> -->
-        <ul class="lg:flex row gap-4 text-white text-lg hidden">
+        <ul
+          class="lg:flex row gap-4 text-white text-lg hidden justify-center items-center"
+        >
           <li><NuxtLink to="/indicar">Indicar</NuxtLink></li>
           <li><NuxtLink to="/indicacoes">Minhas indicações</NuxtLink></li>
           <li><NuxtLink to="/regulamento">Regulamentação</NuxtLink></li>
@@ -70,9 +72,7 @@
     </header>
 
     <!-- <Conteúdo da página> -->
-    <div class="container p-10 mx-auto">
-      <slot />
-    </div>
+    <slot />
     <!-- </Conteúdo da página> -->
 
     <footer class="bg-[#004c25] w-w-full h-auto px-6 py-4 lg:px-12 lg:py-8">
