@@ -37,7 +37,9 @@
 
               <MenuItem v-slot="{ close }">
                 <span
-                  ><NuxtLink to="/suporte" @click="close"
+                  ><NuxtLink
+                    to="https://api.whatsapp.com/send?phone=5542933004300&text=Ol%C3%A1,%20estou%20no%20site,%20preciso%20de%20atendimento."
+                    @click="close"
                     >Suporte</NuxtLink
                   ></span
                 >
@@ -60,12 +62,17 @@
 
         <!-- <Links de Navegação> -->
         <ul
-          class="lg:flex row gap-4 text-white text-lg hidden justify-center items-center"
+          class="lg:flex row gap-6 text-white text-lg hidden justify-center items-center"
         >
           <li><NuxtLink to="/indicar">Indicar</NuxtLink></li>
           <li><NuxtLink to="/indicacoes">Minhas indicações</NuxtLink></li>
           <li><NuxtLink to="/regulamento">Regulamentação</NuxtLink></li>
-          <li><NuxtLink to="/suporte">Suporte</NuxtLink></li>
+          <li>
+            <NuxtLink
+              to="https://api.whatsapp.com/send?phone=5542933004300&text=Ol%C3%A1,%20estou%20no%20site,%20preciso%20de%20atendimento."
+              >Suporte</NuxtLink
+            >
+          </li>
         </ul>
         <!-- </Links de Navegação> -->
       </nav>
