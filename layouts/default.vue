@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-col w-full h-full">
+    <!-- <Icon name="ic:sharp-menu" color="white" size="48"/> -->
     <header class="bg-[#004c25] w-full h-auto">
       <nav
         class="container mx-auto px-6 py-4 grid grid-cols-3 lg:flex lg:justify-between lg:px-12 lg:py-8"
@@ -7,9 +8,13 @@
         <!-- <DropDown Menu para Telas Mobile> -->
         <div class="lg:hidden">
           <Menu>
-            <MenuButton
-              ><Icon name="ic:sharp-menu" color="white" size="48"
-            /></MenuButton>
+            <MenuButton class="flex items-cneter">
+              <img
+                src="https://cdn.discordapp.com/attachments/878707069979594813/1167602107587756052/menu-aberto.png?ex=654eb933&is=653c4433&hm=94e3f84addc8901540b8edddc0d61cb6a21fb4d4d58a1dcb85eb8daedbd4b6aa&"
+                alt="menu"
+                class="max-[320px]:w-8 w-10 md:w-12"
+              />
+            </MenuButton>
             <MenuItems
               class="flex flex-col absolute bg-white gap-4 text-[#004c25] md:text-sm text-xs p-4 rounded-md border border-gray-300"
             >

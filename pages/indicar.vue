@@ -4,15 +4,17 @@
   >
     <form
       action=""
-      class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col items-center p-8 md:p-12 lg:p-12 space-y-4 rounded-3xl"
+      class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col items-center max-[320px]:p-6 p-8 md:p-12 lg:p-12 space-y-4 rounded-3xl"
       v-show="true"
     >
-      <h1 class="text-2xl md:text-5xl lg:text-5xl text-[#3e3e3e] font-bold">
+      <h1
+        class="max-[320px]:text-lg text-2xl md:text-5xl lg:text-5xl text-[#3e3e3e] font-bold"
+      >
         Preencha os dados
       </h1>
       <label
         for="nome"
-        class="flex flex-col w-full text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
+        class="flex flex-col w-full max-[320px]:text-xs text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
         >Nome<input
           type="text"
           id="nome"
@@ -22,7 +24,7 @@
 
       <label
         for="numero"
-        class="flex flex-col w-full text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
+        class="flex flex-col w-full max-[320px]:text-xs text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
         style="margin-bottom: 36px"
         >Número<input
           type="text"
@@ -33,7 +35,7 @@
 
       <label
         for="indicado"
-        class="flex flex-col w-full text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
+        class="flex flex-col w-full max-[320px]:text-xs text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
         >Nome do indicado
         <input
           type="text"
@@ -44,7 +46,7 @@
 
       <label
         for="numIndicado"
-        class="flex flex-col w-full text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
+        class="flex flex-col w-full max-[320px]:text-xs text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
         >Número do indicado
         <input
           type="text"
@@ -55,7 +57,7 @@
 
       <label
         for="parentesco"
-        class="flex flex-col w-full text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
+        class="flex flex-col w-full max-[320px]:text-xs text-sm md:text-xl lg:text-xl text-[#3e3e3e] font-bold"
         style="margin-bottom: 16px"
         >Grau parentesco
         <input
@@ -68,25 +70,28 @@
       <button
         type="submit"
         @click="setIsOpen(false)"
-        class="w-1/3 p-2 bg-white font-bold text-sm md:text-xl lg:text-xl text-[#3e3e3e] rounded-xl border duration-500 hover:text-[#108101] hover:border-[#108101]"
+        class="max-[320px]:w-1/2 w-1/3 p-2 bg-white font-bold text-sm md:text-xl lg:text-xl text-[#3e3e3e] rounded-xl border duration-500 hover:text-[#108101] hover:border-[#108101]"
       >
         Enviar
       </button>
     </form>
+
     <div
-      class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col p-8 md:p-12 lg:p-12 text-center justify-center items-center space-y-4 md:space-y-8 lg:space-y-8 rounded-3xl"
+      class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col max-[320px]:p-6 p-8 md:p-12 lg:p-12 text-center justify-center items-center max-[320px]:space-y-2 space-y-4 md:space-y-8 lg:space-y-8 rounded-3xl"
       v-show="false"
     >
-      <h2 class="text-[#3e3e3e] font-black text-xl md:text-2xl lg:text-2xl">
+      <h2
+        class="text-[#3e3e3e] font-black max-[320px]:text-sm text-xl md:text-2xl lg:text-2xl"
+      >
         Sua indicação foi enviada com sucesso!
       </h2>
       <img
-        src="https://cdn.discordapp.com/attachments/878707069979594813/1167217269747748874/enviar.png?ex=654d52ca&is=653addca&hm=e61d57f069d853bc2cc4f685b6acb8a2c3863c7778b06b048bee24f6bccd3594&"
+        src="https://cdn.discordapp.com/attachments/878707069979594813/1167602361162805258/enviar_1.png?ex=654eb96f&is=653c446f&hm=4500edf905133b468475778f110d35c2589671bba45c84fe406332256929bd92&"
         alt="logo_mensagem"
         class="w-24 md:w-32 lg:w-32"
       />
       <span
-        class="text-[#3e3e3e] font-semibold text-sm md:text-lg lg:text-lg"
+        class="text-[#3e3e3e] font-semibold max-[320px]:text-xs text-sm md:text-lg lg:text-lg"
         style="margin-top: 48px"
         ><NuxtLink to="/indicacoes">Ver minhas indicações</NuxtLink></span
       >
