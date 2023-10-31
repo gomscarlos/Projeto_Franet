@@ -95,11 +95,11 @@
           <img
             src="../assets/images/logo_franet.png"
             alt="logo_franet"
-            class="lg:w-36 w-24"
+            class="lg:w-36 w-24 max-[320px]:w-20"
           />
         </div>
         <!-- <Colunas Grid para Contato> -->
-        <div class="grid row grid-cols-3">
+        <div class="grid row grid-cols-3 max-[320px]:text-[6px]">
           <div class="flex-col text-center space-y-1">
             <h3>Contato</h3>
             <h2 class="font-bold">(43) 99640 - 9468</h2>
@@ -107,7 +107,7 @@
           <div class="flex-col text-center space-y-1 lg:space-y-2">
             <h3>Conheça nossas redes</h3>
             <div
-              class="flex row space-x-5 justify-center lg:space-x-10 md:space-x-8"
+              class="flex row max-[320px]:space-x-2 space-x-5 justify-center lg:space-x-10 md:space-x-8"
             >
               <NuxtLink to="https://www.facebook.com/franettelecom">
                 <img

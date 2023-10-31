@@ -5,7 +5,7 @@
     <form
       action=""
       class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col items-center max-[320px]:p-6 p-8 md:p-12 lg:p-12 space-y-4 rounded-3xl"
-      v-show="true"
+      v-show="false"
     >
       <h1
         class="max-[320px]:text-lg text-2xl md:text-5xl lg:text-5xl text-[#3e3e3e] font-bold"
@@ -77,8 +77,8 @@
     </form>
 
     <div
-      class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col max-[320px]:p-6 p-8 md:p-12 lg:p-12 text-center justify-center items-center max-[320px]:space-y-2 space-y-4 md:space-y-8 lg:space-y-8 rounded-3xl"
-      v-show="false"
+      class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col max-[320px]:p-6 p-8 md:p-12 lg:p-12 text-center justify-center items-center rounded-3xl"
+      v-show="true"
     >
       <h2
         class="text-[#3e3e3e] font-black max-[320px]:text-sm text-xl md:text-2xl lg:text-2xl"
@@ -88,11 +88,10 @@
       <img
         src="https://cdn.discordapp.com/attachments/878707069979594813/1167602361162805258/enviar_1.png?ex=654eb96f&is=653c446f&hm=4500edf905133b468475778f110d35c2589671bba45c84fe406332256929bd92&"
         alt="logo_mensagem"
-        class="w-24 md:w-32 lg:w-32"
+        class="w-24 md:w-32 lg:w-32 max-[320px]:mb-12 mb-16 md:mb-20 lg:mb-16 max-[320px]:mt-6 mt-8 md:mt-10 lg:mt-10"
       />
       <span
         class="text-[#3e3e3e] font-semibold max-[320px]:text-xs text-sm md:text-lg lg:text-lg"
-        style="margin-top: 48px"
         ><NuxtLink to="/indicacoes">Ver minhas indicações</NuxtLink></span
       >
     </div>
