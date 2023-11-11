@@ -1,11 +1,32 @@
+<script setup>
+const form = reactive({
+  nome: "",
+  numero: "",
+  nomeIndicado: "",
+  numeroIndicado: "",
+  parentesco: "",
+});
+
+const isOpen = ref(true);
+
+function setIsOpen(value) {
+  isOpen.value = value;
+}
+
+const handleSubmit = () => {
+  console.log(form);
+  setIsOpen(false);
+};
+</script>
+
 <template>
   <div
     class="flex h-full w-full justify-center p-5 pt-12 pb-12 md:pt-20 lg:pt-20 md:pb-20 lg:pb-20"
   >
     <form
-      action=""
+      @submit.prevent="handleSubmit"
       class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col items-center max-[320px]:p-6 p-8 md:p-12 lg:p-12 space-y-4 rounded-3xl"
-      v-show="true"
+      v-if="isOpen"
     >
       <h1
         class="max-[320px]:text-lg text-2xl md:text-5xl lg:text-5xl text-[#3e3e3e] font-bold"
@@ -18,6 +39,7 @@
         >Nome<input
           type="text"
           id="nome"
+          v-model="form.nome"
           placeholder="Seu nome..."
           class="flex p-2 md:p-3 lg:p-3 rounded-xl border font-normal"
       /></label>
@@ -29,6 +51,7 @@
         >Número<input
           type="text"
           id="numero"
+          v-model="form.numero"
           placeholder="Seu número..."
           class="flex p-2 md:p-3 lg:p-3 rounded-xl border font-normal"
       /></label>
@@ -40,6 +63,7 @@
         <input
           type="text"
           id="indicado"
+          v-model="form.nomeIndicado"
           placeholder="Nome do indicado..."
           class="flex p-2 md:p-3 lg:p-3 rounded-xl border font-normal"
       /></label>
@@ -51,6 +75,7 @@
         <input
           type="text"
           id="numIndicado"
+          v-model="form.numeroIndicado"
           placeholder="Número do indicado..."
           class="flex p-2 md:p-3 lg:p-3 rounded-xl border font-normal"
       /></label>
@@ -63,13 +88,13 @@
         <input
           type="text"
           id="parentesco"
+          v-model="form.parentesco"
           placeholder="Ex: Amigo, Primo..."
           class="flex p-2 md:p-3 lg:p-3 rounded-xl border font-normal"
       /></label>
 
       <button
         type="submit"
-        @click="setIsOpen(false)"
         class="max-[320px]:w-1/2 w-1/3 p-2 bg-white font-bold text-sm md:text-xl lg:text-xl text-[#3e3e3e] rounded-xl border duration-500 hover:text-[#108101] hover:border-[#108101]"
       >
         Enviar
@@ -78,7 +103,7 @@
 
     <div
       class="bg-[#ebebeb] flex w-full md:w-auto lg:w-auto flex-col max-[320px]:p-6 p-8 md:p-12 lg:p-12 text-center justify-center items-center rounded-3xl"
-      v-show="false"
+      v-else
     >
       <h2
         class="text-[#3e3e3e] font-black max-[320px]:text-sm text-xl md:text-2xl lg:text-2xl"
@@ -97,7 +122,5 @@
     </div>
   </div>
 </template>
-
-<script setup></script>
 
 <style scoped></style>
