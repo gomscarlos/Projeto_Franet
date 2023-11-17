@@ -11,6 +11,11 @@ export default defineNuxtConfig({
         },
       },
     ],
-    "nuxt-icon",
+    "nuxt-primevue",
+    "dayjs-nuxt",
+    "@element-plus/nuxt",
   ],
+  primevue: {
+    usePrimeVue: true,
+  },
 });

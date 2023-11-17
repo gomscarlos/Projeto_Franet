@@ -36,6 +36,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: "Regulamento",
+});
+</script>
 
 <style scoped></style>

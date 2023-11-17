@@ -38,6 +38,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: "Compartilhar",
+});
+</script>
 
 <style scoped></style>

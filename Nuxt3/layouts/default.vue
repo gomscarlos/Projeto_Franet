@@ -87,6 +87,7 @@
     <slot />
     <!-- </Conteúdo da página> -->
 
+    <!-- <Footer> -->
     <footer class="bg-[#004c25] w-w-full h-auto px-6 py-4 lg:px-12 lg:py-8">
       <div
         class="container mx-auto text-white flex-col space-y-4 text-[8px] lg:text-lg md:text-sm"
@@ -140,6 +141,7 @@
         <!-- </Colunas Grid para Contato> -->
       </div>
     </footer>
+    <!-- </Footer> -->
   </div>
 </template>
 

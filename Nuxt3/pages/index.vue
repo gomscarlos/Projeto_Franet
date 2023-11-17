@@ -5,6 +5,7 @@
       alt="indiqueganhe"
       class="w-screen h-full"
     />
+
     <div
       class="flex flex-col bg-white w-full h-full max-[320px]:p-8 p-12 md:pt-20 md:pb-20 lg:pt-28 lg:pb-28 rounded-t-3xl text-bold text-center font-bold items-center max-[320px]:space-y-2 space-y-4 md:space-y-8 lg:space-y-12"
     >
@@ -50,6 +51,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: "Indique e Ganhe",
+});
+</script>
 
 <style scoped></style>
