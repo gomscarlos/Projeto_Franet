@@ -233,7 +233,7 @@ async function handleSubmit() {
         Sua indicação foi enviada com sucesso!
       </h2>
       <img
-        src="https://cdn.discordapp.com/attachments/878707069979594813/1167602361162805258/enviar_1.png?ex=654eb96f&is=653c446f&hm=4500edf905133b468475778f110d35c2589671bba45c84fe406332256929bd92&"
+        src="https://cdn.discordapp.com/attachments/878707069979594813/1167602361162805258/enviar_1.png?ex=65eb9bef&is=65d926ef&hm=12a06b627610c3f5e7eb6dae1825fbf7744dd68b65bbd1f41bf59deadbdf871a&"
         alt="logo_mensagem"
         class="w-24 md:w-32 lg:w-32 max-[320px]:mb-12 mb-16 md:mb-20 lg:mb-16 max-[320px]:mt-6 mt-8 md:mt-10 lg:mt-10"
       />

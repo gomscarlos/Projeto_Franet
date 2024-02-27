@@ -10,7 +10,7 @@
           <Menu>
             <MenuButton class="flex items-cneter">
               <img
-                src="https://cdn.discordapp.com/attachments/878707069979594813/1167602107587756052/menu-aberto.png?ex=654eb933&is=653c4433&hm=94e3f84addc8901540b8edddc0d61cb6a21fb4d4d58a1dcb85eb8daedbd4b6aa&"
+                src="https://cdn.discordapp.com/attachments/878707069979594813/1167602107587756052/menu-aberto.png?ex=65eb9bb3&is=65d926b3&hm=31e266e3d2172c578ec647c38c4e49415eb8f8ac2d25c1a08f5f1e06ce82e7bd&"
                 alt="menu"
                 class="max-[320px]:w-8 w-10 md:w-12"
               />
