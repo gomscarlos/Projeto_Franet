@@ -14,7 +14,15 @@ export default defineNuxtConfig({
     "nuxt-primevue",
     "dayjs-nuxt",
     "@element-plus/nuxt",
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
   ],
+  imports: {
+    dirs: ['./stores'],
+  },
+  pinia: {
+    storesDirs: ['./stores/**', './custom-folder/stores/**'],
+  },
   primevue: {
     usePrimeVue: true,
   },
