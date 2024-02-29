@@ -35,7 +35,6 @@ export const useAuthStore = defineStore('auth', {
 
               this.commonSetter(data);
             } catch (error) {
-              console.log(error)
               throw error;
             }
           },
@@ -54,7 +53,6 @@ export const useAuthStore = defineStore('auth', {
 
               tokenStore.removeToken();
             } catch (error) {
-              console.log(error)
               throw error;
             }
           },
