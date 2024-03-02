@@ -9,8 +9,8 @@ definePageMeta({
 const auth = useAuthStore();
 
 const form = reactive({
-  email: "admin.system@gmail.com",
-  password: "passwordfranet",
+  email: "",
+  password: "",
 });
 
 const errorList = reactive({

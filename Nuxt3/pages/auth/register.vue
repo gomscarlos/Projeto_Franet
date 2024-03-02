@@ -18,15 +18,28 @@ const errorList = reactive({
   error: "",
 });
 
+const message = reactive({
+  message: "",
+});
+
+function resetForm() {
+  (form.name = ""), (form.email = ""), (form.password = "");
+}
+
+function resetErrors() {
+  errorList.error = "";
+}
+
 const handleSubmit = async () => {
   try {
     await auth.register(form);
+    message.message = "Usuário Cadastrado com sucesso!!";
+    resetForm();
+    resetErrors();
   } catch (error) {
     if (error.data.errors.email) {
       errorList.error = error.data.errors.email[0];
-    }
-
-    if (error.data.errors.password) {
+    } else if (error.data.errors.password) {
       errorList.error = error.data.errors.password[0];
     }
   }
@@ -94,6 +107,12 @@ const handleSubmit = async () => {
           <ErrorCad :errorName="errorList.error" />
         </div>
 
+        <span
+          v-if="message.message"
+          class="max-[320px]:text-[10px] text-xs md:text-sm lg:text-base text-green-700"
+          >{{ message.message }}</span
+        >
+        <!-- v-if="message.message" -->
         <button
           type="submit"
           class="w-1/2 xl:w-1/3 p-2 bg-white font-bold text-sm md:text-xl lg:text-xl text-[#3e3e3e] rounded-xl border duration-500 hover:text-[#108101] hover:border-[#108101]"

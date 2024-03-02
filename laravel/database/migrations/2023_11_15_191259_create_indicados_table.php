@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('parentesco');
             $table->string('cadastradoEm');
             $table->string('situacao');
-            $table->string('vencimento');
+            $table->string('vencimento')->nullable();
             $table->timestamps();
         });
     }

@@ -41,10 +41,11 @@ function setIsOpen(value) {
 async function handleSubmit() {
   setIsLoading(true);
   date.value = dayjs();
+
   await $fetch("http://127.0.0.1:8000/api/userfranet/" + form.numeroTelefone, {
     method: "GET",
   }).then((res) => {
-    //Varificação automática se a promoção de cada usuário da lista está Expirado
+    //Verificação automática se a promoção de cada usuário da lista está Expirado
     if (res.length !== 0) {
       res.forEach((element) => {
         const dataLimite = dayjs(element.vencimento).toDate();

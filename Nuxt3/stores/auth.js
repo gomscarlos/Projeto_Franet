@@ -28,12 +28,11 @@ export const useAuthStore = defineStore('auth', {
           async register (formData) {
 
             try {
-              const { data } = await $fetch("http://127.0.0.1:8000/api/register", {
+              const res = await $fetch("http://127.0.0.1:8000/api/register", {
                 method: "POST",
                 body: { ...formData },
               });
 
-              this.commonSetter(data);
             } catch (error) {
               throw error;
             }

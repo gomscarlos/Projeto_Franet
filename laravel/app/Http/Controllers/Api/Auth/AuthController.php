@@ -35,7 +35,17 @@ class AuthController extends Controller
             'password'=>$request->password
         ]);
 
-        return $this->makeToken($user);
+        if ($user) {
+            return response()->json([
+                'status' => 200,
+                'message' => "Usuário registrado com sucesso!",
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => "Algo deu errado"
+            ], 500);
+        }
     }
 
     public function makeToken($user){

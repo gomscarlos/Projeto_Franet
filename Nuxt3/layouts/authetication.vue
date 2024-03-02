@@ -10,14 +10,16 @@ const auth = useAuthStore();
         class="container mx-auto px-6 py-4 flex justify-between lg:px-12 lg:py-8"
       >
         <div class="flex justify-center items-center">
-          <img
-            src="../assets/images/logo_franet.png"
-            alt="logo_franet"
-            class="m-auto w-20 lg:w-24"
-          />
+          <NuxtLink to="/adminHome">
+            <img
+              src="../assets/images/logo_franet.png"
+              alt="logo_franet"
+              class="m-auto w-20 lg:w-24 max-[320px]:w-12"
+            />
+          </NuxtLink>
         </div>
         <ul
-          class="row gap-6 text-white lg:text-lg md:text-lg text-sm flex justify-center items-center"
+          class="row gap-6 text-white lg:text-lg md:text-lg text-xs max-[320px]:text-[8px] flex justify-center items-center"
         >
           <li v-if="!token.getStatus">
             <NuxtLink to="/auth/login">Entrar</NuxtLink>

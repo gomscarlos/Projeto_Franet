@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('userfranet', [UserfranetController::class, 'store']);
 Route::get('userfranet/{telefone}', [UserfranetController::class, 'show']);
+Route::get('userfranet', [UserfranetController::class, 'showPendentes']);
 Route::patch('userfranet', [UserfranetController::class, 'update']);
+Route::patch('userfranet/vencimento', [UserfranetController::class, 'updateVencimento']);
 
 Route::controller(AuthController::class)->group(function(){
     Route::post('/login','login');

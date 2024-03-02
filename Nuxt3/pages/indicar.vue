@@ -18,7 +18,6 @@ const form = reactive({
   numeroIndicado: "",
   parentesco: "",
   situacao: "",
-  vencimento: "",
   cadastradoEm: "",
 });
 
@@ -40,7 +39,6 @@ function resetForm() {
   form.nomeIndicado = "";
   form.numeroIndicado = "";
   form.parentesco = "";
-  form.vencimento = "";
   form.situacao = "";
   form.cadastradoEm = "";
 }
@@ -87,7 +85,6 @@ async function handleSubmit() {
   //pegando a data de cadastro e vencimento da promoção
 
   //e também colocando aos campos de forma automática
-  form.vencimento = dayjs().set("day", 30).format("DD/MM/YYYY").toString();
   form.situacao = "Pendente";
   form.cadastradoEm = dayjs().format("DD/MM/YYYY").toString();
 

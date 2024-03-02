@@ -48,7 +48,6 @@ class UserfranetController extends Controller
                     'userfranet_numero' => $request->numero,
                     'parentesco' => $request->parentesco,
                     'situacao' => $request->situacao,
-                    'vencimento' => $request->vencimento,
                     'cadastradoEm' => $request->cadastradoEm,
                 ]);
                 return response()->json([
@@ -73,7 +72,6 @@ class UserfranetController extends Controller
                 'userfranet_numero' => $request->numero,
                 'parentesco' => $request->parentesco,
                 'situacao' => $request->situacao,
-                'vencimento' => $request->vencimento,
                 'cadastradoEm' => $request->cadastradoEm,
             ]);
 
@@ -101,6 +99,13 @@ class UserfranetController extends Controller
         return $user;
     }
 
+    public function showPendentes()
+    {
+        $indicado = Indicado::where('situacao', 'Pendente')->get();
+
+        return $indicado;
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -123,6 +128,27 @@ class UserfranetController extends Controller
                 'status' => 200,
                 'message' => "Situação atualizada para:",
                 'situação' => $request->situacao
+            ], 200);
+        } else {
+            return response()->json([
+                'status' => 500,
+                'message' => "Algo deu errado"
+            ], 500);
+        }
+    }
+
+    public function updateVencimento (Request $request){
+        $indicado = Indicado::where('numeroIndicado', $request->telefoneIndicado)->update([
+            'situacao' => $request->situacao,
+            'vencimento' => $request->vencimento
+        ]);
+
+        if ($indicado) {
+            return response()->json([
+                'status' => 200,
+                'message' => "Situação atualizada para:",
+                'situação' => $request->situacao,
+                'vencimento' => $request->vencimento
             ], 200);
         } else {
             return response()->json([
