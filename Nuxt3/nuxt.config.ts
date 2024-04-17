@@ -26,4 +26,11 @@ export default defineNuxtConfig({
   primevue: {
     usePrimeVue: true,
   },
+  app: {
+    head: {
+      link: [
+        {rel: "icon", href:"logofranet.svg", type: "image/x-icon"}
+      ]
+    },
+  },
 });
