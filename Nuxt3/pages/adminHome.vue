@@ -1,4 +1,9 @@
 <script setup>
+import { useDayjs } from "#dayjs";
+
+const dayjs = useDayjs();
+dayjs().locale("pt-br").format();
+
 definePageMeta({
   layout: "authetication",
   middleware: ["auth"],
@@ -12,9 +17,43 @@ const error = reactive([]);
 
 const isLoading = ref(true);
 
+const date = ref();
+date.value = dayjs();
+
 function setIsLoading(value) {
   isLoading.value = value;
 }
+
+await $fetch("http://127.0.0.1:8000/api/userfranet/expirado", {
+  method: "GET",
+}).then((res) => {
+  if (res.length !== 0) {
+    res.forEach((element) => {
+      const dataLimite = dayjs(
+        element.vencimento[6] +
+          element.vencimento[7] +
+          element.vencimento[8] +
+          element.vencimento[9] +
+          "-" +
+          element.vencimento[3] +
+          element.vencimento[4] +
+          "-" +
+          element.vencimento[0] +
+          element.vencimento[1]
+      ).toDate();
+
+      if (dataLimite < date.value) {
+        $fetch("http://127.0.0.1:8000/api/userfranet", {
+          method: "PATCH",
+          body: {
+            situacao: "Expirado",
+            telefoneIndicado: element.numeroIndicado,
+          },
+        });
+      }
+    });
+  }
+});
 
 await $fetch("http://127.0.0.1:8000/api/userfranet/", {
   method: "GET",
@@ -30,6 +69,7 @@ await $fetch("http://127.0.0.1:8000/api/userfranet/", {
           parentesco: element.parentesco,
         });
       });
+
       setIsLoading(false);
     } else {
       setIsLoading(false);
@@ -43,6 +83,7 @@ await $fetch("http://127.0.0.1:8000/api/userfranet/", {
 
 async function handleSubmit() {
   setIsLoading(true);
+  error.value = "";
   await $fetch("http://127.0.0.1:8000/api/userfranet/", {
     method: "GET",
   })
@@ -60,6 +101,7 @@ async function handleSubmit() {
         });
         setIsLoading(false);
       } else {
+        indicados.length = 0;
         setIsLoading(false);
         error.value = "Não há indicados pendentes...";
       }
@@ -68,10 +110,6 @@ async function handleSubmit() {
       setIsLoading(false);
       error.value = "Erro ao carregar a Lista...";
     });
-}
-
-function onClick() {
-  console.log("Sucesso");
 }
 </script>
 

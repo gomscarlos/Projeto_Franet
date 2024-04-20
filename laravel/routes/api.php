@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+Route::get('userfranet/expirado', [UserfranetController::class, 'showExpirados']);
 Route::post('userfranet', [UserfranetController::class, 'store']);
 Route::get('userfranet/{telefone}', [UserfranetController::class, 'show']);
 Route::get('userfranet', [UserfranetController::class, 'showPendentes']);

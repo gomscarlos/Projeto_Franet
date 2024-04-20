@@ -6,6 +6,10 @@ definePageMeta({
   middleware: ["guest"],
 });
 
+useHead({
+  link: [{ rel: "icon", href: "logofranet.svg", type: "image/x-icon" }],
+});
+
 const auth = useAuthStore();
 
 const form = reactive({

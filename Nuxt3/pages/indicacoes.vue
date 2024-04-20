@@ -48,16 +48,29 @@ async function handleSubmit() {
     //Verificação automática se a promoção de cada usuário da lista está Expirado
     if (res.length !== 0) {
       res.forEach((element) => {
-        const dataLimite = dayjs(element.vencimento).toDate();
+        if (element.vencimento) {
+          const dataLimite = dayjs(
+            element.vencimento[6] +
+              element.vencimento[7] +
+              element.vencimento[8] +
+              element.vencimento[9] +
+              "-" +
+              element.vencimento[3] +
+              element.vencimento[4] +
+              "-" +
+              element.vencimento[0] +
+              element.vencimento[1]
+          ).toDate();
 
-        if (dataLimite < date.value) {
-          $fetch("http://127.0.0.1:8000/api/userfranet", {
-            method: "PATCH",
-            body: {
-              situacao: "Expirado",
-              telefoneIndicado: element.numeroIndicado,
-            },
-          });
+          if (dataLimite < date.value) {
+            $fetch("http://127.0.0.1:8000/api/userfranet", {
+              method: "PATCH",
+              body: {
+                situacao: "Expirado",
+                telefoneIndicado: element.numeroIndicado,
+              },
+            });
+          }
         }
       });
     }

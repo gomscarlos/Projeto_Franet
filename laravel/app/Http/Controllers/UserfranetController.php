@@ -106,6 +106,12 @@ class UserfranetController extends Controller
         return $indicado;
     }
 
+    public function showExpirados()
+    {
+        $indicado = Indicado::where('situacao', 'Ativo')->get();
+
+        return $indicado;
+    }
     /**
      * Show the form for editing the specified resource.
      */
